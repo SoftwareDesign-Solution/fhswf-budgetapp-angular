@@ -1,0 +1,18 @@
+<div class="card">
+
+  <div class="card-body">
+
+    <div class="d-flex justify-content-between align-items-baseline fw-normal mb-3">
+      <div class="float-start">{{ this.name }}</div>
+      <div class="float-end">{{ this.amount }} EUR / {{ this.max}}EUR</div>
+    </div>
+
+    <ngb-progressbar [type]="this.getProgressBarVariant(this.amount, this.max)" [value]="this.amount" [max]="this.max"></ngb-progressbar>
+
+    <div *ngIf="!this.hideButtons" class="d-flex justify-content-end mt-4">
+      <button class="btn btn-outline-primary m-2" (click)="this.onExpenseAdd.emit()">Kosten hinzufügen</button>
+      <button class="btn btn-outline-secondary m-2" (click)="this.onViewExpenses.emit()">Kosten auflisten</button>
+    </div>
+  </div>
+
+</div>
